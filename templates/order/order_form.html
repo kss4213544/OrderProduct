@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div class="container">
+<h1> New / Update Order</h1>
+
+<form method="POST">
+  {% csrf_token %}
+      <label>Order_id</label> {{ form.order_id}} </br>
+      <label>Manager_id</label> {{ form.manager_id}} </br>
+      <label>Date</label>  {{ form.date}} </br>
+      <label>T_price</label>  {{ form.t_price }} </br>
+  <button class="btn btn-default" type="submit">Save</button>
+  <button onclick="window.history.back();" class="btn btn-default" type="button">Cancel</button>
+</form>
+{% if order %}
+      <a class="btn btn-danger" href="{%url 'delete_order' order.order_id %}">Delete</a>
+  {%endif%}
+</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</body>
+</html>

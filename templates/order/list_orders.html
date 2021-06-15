@@ -1,0 +1,31 @@
+<html>
+<body>
+<h1><center>Order List</center></h1>
+<div class="container">
+
+<table class="table table-striped">
+  <tr>
+     <th>ID </th>
+     <th>Manager_id</th>
+     <th>Date</th>
+     <th>Total Price</th>
+     <th> Update </th>
+  </tr>
+  <tr>
+  {% for order in orders%}
+    <td> {{ order.order_id }} </td>
+    <td> {{ order.manager_id }} </td>
+    <td> {{ order.date }} </td>
+    <td> {{ order.t_price }} </td>
+    <td> <a class="btn btn-info" href = "{%url 'update_order' order.order_id %}" >Update  </a> <td>
+    </tr>
+  {%endfor%}
+</table>
+
+<a class="btn btn-info pull-right" href = "{%url 'add_order' %}"> New Order </a>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</div>
+</body>
+</html>
