@@ -35,3 +35,8 @@ def delete_order(request, order_id):
         return redirect('list_orders')
 
     return render(request, 'order/order_delete_confirm.html', {'order': order})
+
+from django.shortcuts import render
+
+def viewbar(request):
+    return render(request, 'order/viewbar.html')

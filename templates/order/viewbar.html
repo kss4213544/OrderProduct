@@ -1,0 +1,35 @@
+<html>
+   <head>
+      <title>Bmart Order Rankings</title>
+      <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+      </script>
+      <script type = "text/javascript">
+         google.charts.load('current', {packages: ['corechart']});
+      </script>
+   </head>
+
+   <body>
+      <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto">
+      </div>
+      <script language = "JavaScript">
+         function drawChart() {
+            // Define the chart to be drawn.
+            var data = google.visualization.arrayToDataTable([
+               ['Month', '밀키트', '유제품', '과일,채소', '면류', '요리,반찬'],
+               ['January',  1800,      390,       250,    1220,  540],
+               ['February',  1600,      400,      300,  1150,    520],
+               ['March',  1370,      440,      320,   1130,    530],
+               ['April',  1250,       480,     440,    1190,     470],
+               ['May',  1030,      540,       520,    1030,    430],
+            ]);
+
+            var options = {title: 'Population (in millions)'};
+
+            // Instantiate and draw the chart.
+            var chart = new google.visualization.BarChart(document.getElementById('container'));
+            chart.draw(data, options);
+         }
+         google.charts.setOnLoadCallback(drawChart);
+      </script>
+   </body>
+</html>

@@ -1,6 +1,11 @@
 from django.urls import path
 
 from product import views
+from django.conf.urls import url
+
+from django.contrib import admin
+
+import order.views
 
 urlpatterns = [
     path('', views.list_products, name='list_products'),
